@@ -1,0 +1,84 @@
+#include <stdio.h>
+
+void Start(void)
+{
+	printf("연산을 할 정수를 입력하시오.");
+}
+
+int Input(void)
+{
+	int num;
+	scanf_s("%d", &num);
+	return num;
+}
+
+
+int Plus(int num1, int num2)
+{
+	return num1 + num2;
+}
+int Minus(int num1, int num2)
+{
+	return num1 - num2;
+}
+int Multyply(int num1, int num2)
+{
+	return num1 * num2;
+}
+int Divide(int num1, int num2)
+{
+	return num1 / num2;
+}
+void ShowResult(int result)
+{
+	printf("결과는 %d입니다.", result);
+}
+int main(void)
+{
+
+
+	int a = 0;
+	int  num1 = 0, num2 = 0, result = 0;
+
+	Start();
+	num1 = Input();
+	while (1)
+	{
+		printf("press 1 to plus, 2 to minus, 3 to multyply, 4 to divide\n");
+		scanf_s("%d", &a);
+
+		switch (a)
+		{
+
+		case 1:
+			Start();
+			num2 = Input();
+			result = Plus(num1, num2);
+			break;
+
+		case 2:
+			Start();
+			num2 = Input();
+			result = Minus(num1, num2);
+			break;
+
+		case 3:
+			Start();
+			num2 = Input();
+			result = Multyply(num1, num2);
+			break;
+
+		case 4:
+			Start();
+			num2 = Input();
+			result = Divide(num1, num2);
+			break;
+
+		}
+
+		printf("결과 : %d \n", result);
+		printf("%d에 연산할 부호와 정수를 입력하시오.\n", result);
+		num1 = result;
+	}
+	return 0;
+}
